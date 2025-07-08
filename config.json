@@ -2,5 +2,7 @@
     "title":"xianxin's blog",
     "subTitle":"I am xianxin",
     "avatarUrl":"https://cdn.jsdelivr.net/gh/xianxinyyds/tuchuang@main/img/xianxin.jpg",
-    "GMEEK_VERSION":"last"
+    "GMEEK_VERSION":"last",
+    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>",
+    "allHead":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>"
 }
